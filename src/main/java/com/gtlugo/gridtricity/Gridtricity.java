@@ -1,4 +1,4 @@
-package com.burnt_bulb.gridtricity;
+package com.gtlugo.gridtricity;
 
 import org.slf4j.Logger;
 
