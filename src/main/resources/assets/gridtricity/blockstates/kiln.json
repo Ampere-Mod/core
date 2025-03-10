@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model":  "gridtricity:block/kiln"
+    },
+    "facing=east": {
+      "model": "gridtricity:block/kiln",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gridtricity:block/kiln",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gridtricity:block/kiln",
+      "y": 270
+    }
+  }
+}

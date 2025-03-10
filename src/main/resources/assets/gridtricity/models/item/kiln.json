@@ -1,0 +1,6 @@
+{
+  "parent": "gridtricity:block/kiln",
+  "textures": {
+    "layer0": "gridtricity:block/kiln"
+  }
+}

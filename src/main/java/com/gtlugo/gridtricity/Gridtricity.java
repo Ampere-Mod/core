@@ -1,5 +1,6 @@
 package com.gtlugo.gridtricity;
 
+import com.gtlugo.gridtricity.common.block.ModBlocks;
 import com.gtlugo.gridtricity.common.item.ModItems;
 import org.slf4j.Logger;
 
@@ -23,7 +24,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
 
 /*
   Ideas:
@@ -69,6 +69,16 @@ public class Gridtricity {
         output.accept(ModItems.SCREWDRIVER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
       }).build());
 
+  // Creates a creative tab with the id "gridtricity:example_tab" for the example item, that is placed after the combat tab
+  public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TABS.register(MOD_ID + "_blocks", () -> CreativeModeTab.builder()
+      .title(Component.translatable("itemGroup.gridtricity.blocks")) //The language key for the title of your CreativeModeTab
+      .withTabsBefore(TOOLS_TAB.getId())
+      .icon(() -> ModBlocks.KILN.get().asItem().getDefaultInstance())
+      .displayItems((parameters, output) -> {
+        output.accept(ModBlocks.KILN.get());
+        output.accept(ModBlocks.POWER_PLANT.get());
+      }).build());
+
   // The constructor for the mod class is the first code that is run when your mod is loaded.
   // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
   public Gridtricity(IEventBus modEventBus, ModContainer modContainer) {
@@ -76,6 +86,7 @@ public class Gridtricity {
     modEventBus.addListener(this::commonSetup);
 
     ModItems.register(modEventBus);
+    ModBlocks.register(modEventBus);
     CREATIVE_MODE_TABS.register(modEventBus);
 
     modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
