@@ -1,3 +1,3 @@
-# [<div align="center">`Gridtricity`</div>](https://github.com/GTLugo/Gridtricity)
+# [<div align="center">`Ampere`</div>](https://github.com/GTLugo/ampere)
 
-Network-based power for Minecraft machinery.
+Create power grids to electrify your world.

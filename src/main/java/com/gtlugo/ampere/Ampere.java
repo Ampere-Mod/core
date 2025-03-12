@@ -1,7 +1,7 @@
-package com.gtlugo.gridtricity;
+package com.gtlugo.ampere;
 
-import com.gtlugo.gridtricity.common.block.ModBlocks;
-import com.gtlugo.gridtricity.common.item.ModItems;
+import com.gtlugo.ampere.common.block.ModBlocks;
+import com.gtlugo.ampere.common.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -39,7 +39,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
     Electric centrifuge
 
   Furnaces:
-    Electric kiln (blast furnace)
+    Electric furnace (blast furnace)
     Electric smoker (smoker)
 
   Misc:
@@ -50,41 +50,41 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  */
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(Gridtricity.MOD_ID)
-public class Gridtricity {
+@Mod(Ampere.MOD_ID)
+public class Ampere {
   // Define mod id in a common place for everything to reference
-  public static final String MOD_ID = "gridtricity";
+  public static final String MOD_ID = "ampere";
   // Directly reference a slf4j logger
   private static final Logger LOGGER = LogUtils.getLogger();
 
-  public static final DeferredRegister.Items ITEM_REGISTRY = DeferredRegister.createItems(Gridtricity.MOD_ID);
-  public static final DeferredRegister.Blocks BLOCK_REGISTRY = DeferredRegister.createBlocks(Gridtricity.MOD_ID);
+  public static final DeferredRegister.Items ITEM_REGISTRY = DeferredRegister.createItems(Ampere.MOD_ID);
+  public static final DeferredRegister.Blocks BLOCK_REGISTRY = DeferredRegister.createBlocks(Ampere.MOD_ID);
 
-  // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "gridtricity" namespace
+  // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "ampere" namespace
   public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-  // Creates a creative tab with the id "gridtricity:example_tab" for the example item, that is placed after the combat tab
+  // Creates a creative tab with the id "ampere:example_tab" for the example item, that is placed after the combat tab
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TOOLS_TAB = CREATIVE_MODE_TABS.register(MOD_ID + "_tools", () -> CreativeModeTab.builder()
-      .title(Component.translatable("itemGroup.gridtricity.tools")) //The language key for the title of your CreativeModeTab
+      .title(Component.translatable("itemGroup.ampere.tools")) //The language key for the title of your CreativeModeTab
       .withTabsBefore(CreativeModeTabs.COMBAT)
       .icon(() -> ModItems.SCREWDRIVER.get().getDefaultInstance())
       .displayItems((parameters, output) -> {
         output.accept(ModItems.SCREWDRIVER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
       }).build());
 
-  // Creates a creative tab with the id "gridtricity:example_tab" for the example item, that is placed after the combat tab
+  // Creates a creative tab with the id "ampere:example_tab" for the example item, that is placed after the combat tab
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TABS.register(MOD_ID + "_blocks", () -> CreativeModeTab.builder()
-      .title(Component.translatable("itemGroup.gridtricity.blocks")) //The language key for the title of your CreativeModeTab
+      .title(Component.translatable("itemGroup.ampere.blocks")) //The language key for the title of your CreativeModeTab
       .withTabsBefore(TOOLS_TAB.getId())
-      .icon(() -> ModBlocks.KILN.block().get().asItem().getDefaultInstance())
+      .icon(() -> ModBlocks.FURNACE.get().asItem().getDefaultInstance())
       .displayItems((parameters, output) -> {
-        output.accept(ModBlocks.KILN.block().get());
-        output.accept(ModBlocks.POWER_PLANT.block().get());
+        output.accept(ModBlocks.FURNACE.get());
+        output.accept(ModBlocks.POWER_PLANT.get());
       }).build());
 
   // The constructor for the mod class is the first code that is run when your mod is loaded.
   // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-  public Gridtricity(IEventBus modEventBus, ModContainer modContainer) {
+  public Ampere(IEventBus modEventBus, ModContainer modContainer) {
     NeoForge.EVENT_BUS.register(this);
     modEventBus.addListener(this::commonSetup);
 

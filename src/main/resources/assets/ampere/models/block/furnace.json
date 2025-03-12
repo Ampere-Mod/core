@@ -1,7 +1,7 @@
 {
   "parent": "block/cube",
   "textures": {
-    "all": "gridtricity:block/kiln"
+    "all": "ampere:block/furnace"
   },
   "elements": [
     {

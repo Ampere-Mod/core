@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=north": {
-      "model":  "gridtricity:block/kiln"
+      "model":  "ampere:block/furnace"
     },
     "facing=east": {
-      "model": "gridtricity:block/kiln",
+      "model": "ampere:block/furnace",
       "y": 90
     },
     "facing=south": {
-      "model": "gridtricity:block/kiln",
+      "model": "ampere:block/furnace",
       "y": 180
     },
     "facing=west": {
-      "model": "gridtricity:block/kiln",
+      "model": "ampere:block/furnace",
       "y": 270
     }
   }

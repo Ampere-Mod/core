@@ -1,0 +1,6 @@
+{
+  "parent": "ampere:block/power_plant",
+  "textures": {
+    "layer0": "ampere:block/power_plant"
+  }
+}

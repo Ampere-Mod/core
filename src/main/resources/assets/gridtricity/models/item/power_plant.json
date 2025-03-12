@@ -1,6 +1,0 @@
-{
-  "parent": "gridtricity:block/power_plant",
-  "textures": {
-    "layer0": "gridtricity:block/power_plant"
-  }
-}

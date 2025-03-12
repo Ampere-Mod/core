@@ -1,4 +1,4 @@
-package com.gtlugo.gridtricity.common.block;
+package com.gtlugo.ampere.common.block;
 
 import net.minecraft.world.level.block.Block;
 

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "gridtricity:item/screwdriver"
+    "layer0": "ampere:item/screwdriver"
   }
 }

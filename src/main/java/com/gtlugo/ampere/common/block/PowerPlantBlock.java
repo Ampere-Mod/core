@@ -1,20 +1,19 @@
-package com.gtlugo.gridtricity.common.block;
+package com.gtlugo.ampere.common.block;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
 
-public class KilnBlock extends ModBlock {
+public class PowerPlantBlock extends ModBlock {
   public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-  public KilnBlock() {
-    super(BlockBehaviour.Properties.of());
+  public PowerPlantBlock() {
+    super(Properties.of());
     registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH));
   }
 
