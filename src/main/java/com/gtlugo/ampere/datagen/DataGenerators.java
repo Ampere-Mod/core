@@ -35,5 +35,7 @@ public class DataGenerators {
         lookup_provider
       )
     );
+    generator.addProvider(event.includeClient(), new ModBlockStateProvider(pack_output, existing_file_helper));
+    generator.addProvider(event.includeClient(), new ModItemModelProvider(pack_output, existing_file_helper));
   }
 }

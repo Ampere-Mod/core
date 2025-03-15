@@ -1,7 +1,5 @@
 package com.gtlugo.ampere.server;
 
-import java.math.BigDecimal;
-
 public class Grid {
   private double max_wattage;
   private double in_use_wattage;

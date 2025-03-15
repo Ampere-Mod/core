@@ -98,6 +98,10 @@ public class Ampere {
       return this.block.get();
     }
 
+    public DeferredBlock<?> deferred() {
+      return this.block;
+    }
+
     public static void register(IEventBus event_bus) {
       Ampere.BLOCK_REGISTRY.register(event_bus);
     }
