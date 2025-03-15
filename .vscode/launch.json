@@ -6,17 +6,17 @@
       "request": "launch",
       "name": "Client",
       "presentation": {
-        "group": "Mod Development - gridtricity",
+        "group": "Mod Development - ampere",
         "order": 0
       },
-      "projectName": "gridtricity",
+      "projectName": "ampere",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\source\\gridtricity\\build\\moddev\\clientRunProgramArgs.txt"
+        "@D:\\source\\ampere\\build\\moddev\\clientRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\source\\gridtricity\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dgridtricity%%D:\\source\\gridtricity\\bin\\main"
+        "@D:\\source\\ampere\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dampere%%D:\\source\\ampere\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -28,17 +28,17 @@
       "request": "launch",
       "name": "Data",
       "presentation": {
-        "group": "Mod Development - gridtricity",
+        "group": "Mod Development - ampere",
         "order": 1
       },
-      "projectName": "gridtricity",
+      "projectName": "ampere",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\source\\gridtricity\\build\\moddev\\dataRunProgramArgs.txt"
+        "@D:\\source\\ampere\\build\\moddev\\dataRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\source\\gridtricity\\build\\moddev\\dataRunVmArgs.txt",
-        "-Dfml.modFolders\u003dgridtricity%%D:\\source\\gridtricity\\bin\\main"
+        "@D:\\source\\ampere\\build\\moddev\\dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dampere%%D:\\source\\ampere\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -50,17 +50,17 @@
       "request": "launch",
       "name": "GameTestServer",
       "presentation": {
-        "group": "Mod Development - gridtricity",
+        "group": "Mod Development - ampere",
         "order": 2
       },
-      "projectName": "gridtricity",
+      "projectName": "ampere",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\source\\gridtricity\\build\\moddev\\gameTestServerRunProgramArgs.txt"
+        "@D:\\source\\ampere\\build\\moddev\\gameTestServerRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\source\\gridtricity\\build\\moddev\\gameTestServerRunVmArgs.txt",
-        "-Dfml.modFolders\u003dgridtricity%%D:\\source\\gridtricity\\bin\\main"
+        "@D:\\source\\ampere\\build\\moddev\\gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dampere%%D:\\source\\ampere\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -72,17 +72,17 @@
       "request": "launch",
       "name": "Server",
       "presentation": {
-        "group": "Mod Development - gridtricity",
+        "group": "Mod Development - ampere",
         "order": 3
       },
-      "projectName": "gridtricity",
+      "projectName": "ampere",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\source\\gridtricity\\build\\moddev\\serverRunProgramArgs.txt"
+        "@D:\\source\\ampere\\build\\moddev\\serverRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\source\\gridtricity\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dgridtricity%%D:\\source\\gridtricity\\bin\\main"
+        "@D:\\source\\ampere\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dampere%%D:\\source\\ampere\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},

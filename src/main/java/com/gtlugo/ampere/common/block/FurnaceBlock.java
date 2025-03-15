@@ -3,11 +3,13 @@ package com.gtlugo.ampere.common.block;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class FurnaceBlock extends ModBlock {
@@ -16,6 +18,11 @@ public class FurnaceBlock extends ModBlock {
   public FurnaceBlock() {
     super(BlockBehaviour.Properties.of());
     registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH));
+  }
+
+  @Override
+  public @NotNull RenderShape getRenderShape(@NotNull BlockState pState) {
+    return RenderShape.MODEL;
   }
 
   @Override

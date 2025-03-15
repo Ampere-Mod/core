@@ -30,12 +30,30 @@ public class DataGenerators {
         pack_output,
         Collections.emptySet(),
         List.of(
-          new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)
+          new LootTableProvider.SubProviderEntry(
+            ModBlockLootTableProvider::new,
+            LootContextParamSets.BLOCK
+          )
         ),
         lookup_provider
       )
     );
-    generator.addProvider(event.includeClient(), new ModBlockStateProvider(pack_output, existing_file_helper));
-    generator.addProvider(event.includeClient(), new ModItemModelProvider(pack_output, existing_file_helper));
+    generator.addProvider(
+      event.includeServer(),
+      new ModBlockTagProvider(
+        pack_output,
+        lookup_provider,
+        existing_file_helper
+      )
+    );
+
+    generator.addProvider(
+      event.includeClient(),
+      new ModBlockStateProvider(pack_output, existing_file_helper)
+    );
+    generator.addProvider(
+      event.includeClient(),
+      new ModItemModelProvider(pack_output, existing_file_helper)
+    );
   }
 }

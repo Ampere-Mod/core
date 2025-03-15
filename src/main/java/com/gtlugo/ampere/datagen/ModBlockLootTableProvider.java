@@ -19,6 +19,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
   protected void generate() {
     dropSelf(Ampere.Blocks.FURNACE.get());
     dropSelf(Ampere.Blocks.POWER_PLANT.get());
+    dropSelf(Ampere.Blocks.WIRE.get());
   }
 
   @Override
