@@ -19,4 +19,4 @@ Multipart support for cables will be investigated. Absolutely no promises are be
 
 ## Future
 
-A major goal is to support Fabric once the NeoForge version is complete. This is seriously important as it provides ultimate freedom to the player to use whichever loader they want. I have tested Architectury implementations, and they are promising; however, there is still some manual implementation needed for each modloader that meant I would not want to release depending on it just yet.
+A major goal is to support Fabric once the NeoForge version is complete. This is seriously important to me as it provides ultimate freedom to the player to use whichever loader they want. I have tested Architectury implementations, and they are promising; however, there is still some manual implementation needed for each modloader that meant I would not want to release depending on it just yet.
