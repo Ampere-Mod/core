@@ -11,7 +11,7 @@ out
 *.ipr
 *.iws
 *.iml
-.idea
+.idea/
 
 # gradle
 build
@@ -23,5 +23,10 @@ run
 runs
 run-data
 src/generated/
+.vscode/
+
+Merged
 
 repo
+
+.architectury-transformer/
