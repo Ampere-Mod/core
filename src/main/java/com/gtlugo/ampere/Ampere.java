@@ -56,8 +56,8 @@ import java.util.function.Supplier;
 @Mod(Ampere.MOD_ID)
 public class Ampere {
   public static final String MOD_ID = "ampere";
-  public static final DeferredRegister.Items ITEM_REGISTRY = DeferredRegister.createItems(Ampere.MOD_ID);
   public static final DeferredRegister.Blocks BLOCK_REGISTRY = DeferredRegister.createBlocks(Ampere.MOD_ID);
+  public static final DeferredRegister.Items ITEM_REGISTRY = DeferredRegister.createItems(Ampere.MOD_ID);
   // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "ampere" namespace
   public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(
     Registries.CREATIVE_MODE_TAB,
@@ -65,17 +65,22 @@ public class Ampere {
   );
   // Creates a creative tab with the id "ampere:example_tab" for the example item, that is placed after the combat tab
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TOOLS_TAB = CREATIVE_MODE_TABS.register(
-    MOD_ID + "_tools", () -> CreativeModeTab.builder()
+    MOD_ID + "_tools",
+    () -> CreativeModeTab
+      .builder()
       .title(Component.translatable("itemGroup.ampere.tools")) //The language key for the title of your CreativeModeTab
-      .withTabsBefore(CreativeModeTabs.COMBAT)
+      .withTabsBefore(CreativeModeTabs.OP_BLOCKS)
       .icon(() -> Items.SCREWDRIVER.get().getDefaultInstance())
       .displayItems((parameters, output) -> {
         output.accept(Items.SCREWDRIVER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
         output.accept(Items.PROBE.get());
-      }).build()
+      })
+      .build()
   );
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TABS.register(
-    MOD_ID + "_blocks", () -> CreativeModeTab.builder()
+    MOD_ID + "_blocks",
+    () -> CreativeModeTab
+      .builder()
       .title(Component.translatable("itemGroup.ampere.blocks")) //The language key for the title of your CreativeModeTab
       .withTabsBefore(TOOLS_TAB.getId())
       .icon(() -> Blocks.FURNACE.get().asItem().getDefaultInstance())
@@ -83,7 +88,8 @@ public class Ampere {
         output.accept(Blocks.WIRE.get());
         output.accept(Blocks.FURNACE.get());
         output.accept(Blocks.POWER_PLANT.get());
-      }).build()
+      })
+      .build()
   );
   private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -114,9 +120,10 @@ public class Ampere {
   }
 
   public enum Blocks {
-    FURNACE("furnace", FurnaceBlock::new),
-    POWER_PLANT("power_plant", PowerPlantBlock::new),
-    WIRE("wire", WireBlock::new);
+    FURNACE("furnace", FurnaceBlock::new), POWER_PLANT("power_plant", PowerPlantBlock::new), WIRE(
+      "wire",
+      WireBlock::new
+    );
 
     private final DeferredBlock<ModBlock> block;
 
@@ -144,8 +151,7 @@ public class Ampere {
   }
 
   public enum Items {
-    SCREWDRIVER("screwdriver", ScrewdriverItem::new),
-    PROBE("probe", ProbeItem::new);
+    SCREWDRIVER("screwdriver", ScrewdriverItem::new), PROBE("probe", ProbeItem::new);
 
     private final DeferredItem<ModItem> item;
 

@@ -48,7 +48,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
       .builder()
       .modelFile(models()
                    .withExistingParent(name, modLoc("block/machine"))
-                   .texture("all", blockTexture(block.get())))
+                   .texture("all", blockTexture(block.get()))
+                   .texture("particle", blockTexture(block.get())))
       .rotationY((int) state
         .getValue(BlockStateProperties.HORIZONTAL_FACING)
         .getOpposite()
@@ -66,31 +67,56 @@ public class ModBlockStateProvider extends BlockStateProvider {
     simpleBlockItem(Ampere.Blocks.WIRE.get(), wire);
     getMultipartBuilder(Ampere.Blocks.WIRE.get()) // Get multipart builder
       .part() // Create part
-      .modelFile(wire_core) // Can show 'redstoneDot'
+      .modelFile(wire_core) // WIRE NORTH_SOUTH
+      .addModel() // 'redstoneDot' is displayed
+      .condition(
+        WireBlock.NORTH_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // NORTH_REDSTONE is SIDE or UP
+      .end() // Finish part
+      .part() // Create part
+      .modelFile(wire_core) // WIRE EAST_WEST // Can show 'redstoneDot'
       .addModel() // 'redstoneDot' is displayed
       .end() // Finish part
       .part() // Create part
       .modelFile(wire_side) // Can show 'redstoneSide0'
       .addModel() // 'redstoneSide0' is displayed when...
-      .condition(WireBlock.NORTH_WIRE, WireSide.WIRE, WireSide.MACHINE) // NORTH_REDSTONE is SIDE or UP
+      .condition(
+        WireBlock.NORTH_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // NORTH_REDSTONE is SIDE or UP
       .end() // Finish part
       .part() // Create part
       .modelFile(wire_side) // Can show 'redstoneSideAlt0'
       .rotationY(180) // Rotates 'redstoneSideAlt1' 270 degrees on the Y axis
       .addModel() // 'redstoneSideAlt0' is displayed when...
-      .condition(WireBlock.SOUTH_WIRE, WireSide.WIRE, WireSide.MACHINE) // SOUTH_REDSTONE is SIDE or UP
+      .condition(
+        WireBlock.SOUTH_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // SOUTH_REDSTONE is SIDE or UP
       .end() // Finish part
       .part() // Create part
       .modelFile(wire_side) // Can show 'redstoneSideAlt1'
       .rotationY(90) // Rotates 'redstoneSide1' 270 degrees on the Y axis
       .addModel() // 'redstoneSideAlt1' is displayed when...
-      .condition(WireBlock.EAST_WIRE, WireSide.WIRE, WireSide.MACHINE) // EAST_REDSTONE is SIDE or UP
+      .condition(
+        WireBlock.EAST_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // EAST_REDSTONE is SIDE or UP
       .end() // Finish part
       .part() // Create part
       .modelFile(wire_side) // Can show 'redstoneSide1'
       .rotationY(270) // Rotates 'redstoneSideAlt1' 270 degrees on the Y axis
       .addModel() // 'redstoneSide1' is displayed when...
-      .condition(WireBlock.WEST_WIRE, WireSide.WIRE, WireSide.MACHINE) // WEST_REDSTONE is SIDE or UP
+      .condition(
+        WireBlock.WEST_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // WEST_REDSTONE is SIDE or UP
       .end().part() // Create part
       .modelFile(wire_side) // Can show 'redstoneSideAlt1'
       .rotationX(-90) // Rotates 'redstoneSideAlt1' 270 degrees on the Y axis
@@ -101,7 +127,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
       .modelFile(wire_side) // Can show 'redstoneSide1'
       .rotationX(90) // Rotates 'redstoneSide1' 270 degrees on the Y axis
       .addModel() // 'redstoneSide1' is displayed when...
-      .condition(WireBlock.DOWN_WIRE, WireSide.WIRE, WireSide.MACHINE) // WEST_REDSTONE is SIDE or UP
+      .condition(
+        WireBlock.DOWN_WIRE,
+        WireSide.WIRE,
+        WireSide.MACHINE
+      ) // WEST_REDSTONE is SIDE or UP
       .end(); // Finish part
   }
 }

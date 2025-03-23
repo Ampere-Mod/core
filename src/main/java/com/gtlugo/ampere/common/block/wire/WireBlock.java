@@ -21,13 +21,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class WireBlock extends ModBlock implements EntityBlock {
-  public static final VoxelShape CORE_SHAPE = Block.box(4, 4, 4, 12, 12, 12);
-  public static final VoxelShape NORTH_SHAPE = Block.box(4, 4, 0, 12, 12, 4);
-  public static final VoxelShape SOUTH_SHAPE = Block.box(4, 4, 12, 12, 12, 16);
-  public static final VoxelShape WEST_SHAPE = Block.box(0, 4, 4, 4, 12, 12);
-  public static final VoxelShape EAST_SHAPE = Block.box(12, 4, 4, 16, 12, 12);
-  public static final VoxelShape DOWN_SHAPE = Block.box(4, 0, 4, 12, 4, 12);
-  public static final VoxelShape UP_SHAPE = Block.box(4, 12, 4, 12, 16, 12);
+  public static final VoxelShape CORE_SHAPE = Block.box(5, 5, 5, 11, 11, 11);
+  public static final VoxelShape NORTH_SHAPE = Block.box(5, 5, 0, 11, 11, 5);
+  public static final VoxelShape SOUTH_SHAPE = Block.box(5, 5, 11, 11, 11, 16);
+  public static final VoxelShape WEST_SHAPE = Block.box(0, 5, 5, 5, 11, 11);
+  public static final VoxelShape EAST_SHAPE = Block.box(11, 5, 5, 16, 11, 11);
+  public static final VoxelShape DOWN_SHAPE = Block.box(5, 0, 5, 11, 5, 11);
+  public static final VoxelShape UP_SHAPE = Block.box(5, 11, 5, 11, 16, 11);
 
   public static final EnumProperty<WireSide> EAST_WIRE = EnumProperty.create(
     "east",
