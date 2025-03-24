@@ -60,11 +60,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
   private void wire() {
     var wire = models().getExistingFile(modLoc("wire"));
     wire.assertExistence();
+    simpleBlockItem(Ampere.Blocks.WIRE.get(), wire);
+
     var wire_core = models().getExistingFile(modLoc("wire_core"));
     wire_core.assertExistence();
     var wire_side = models().getExistingFile(modLoc("wire_side"));
     wire_side.assertExistence();
-    simpleBlockItem(Ampere.Blocks.WIRE.get(), wire);
     getMultipartBuilder(Ampere.Blocks.WIRE.get()) // Get multipart builder
       .part() // Create part
       .modelFile(wire_core) // WIRE NORTH_SOUTH

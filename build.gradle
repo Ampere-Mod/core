@@ -19,7 +19,6 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
-    maven { url = "https://maven.covers1624.net" }
 }
 
 base {

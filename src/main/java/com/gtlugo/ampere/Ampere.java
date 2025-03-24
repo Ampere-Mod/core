@@ -11,6 +11,7 @@ import com.gtlugo.ampere.common.item.ScrewdriverItem;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -28,30 +29,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
 import java.util.function.Supplier;
-
-/*
-  Ideas:
-  -----------------------------------------------------------------------------------
-  Conversion:
-    Transformer (ingest FE, provide Watts, or vice versa) <- Not sure about
-    Electric generator (Create SU/Rpm -> Watts)
-    Electric motor (Watts -> Create SU/Rpm)
-
-  Processing:
-    Electric crusher
-    Electric washer
-    Electric centrifuge
-
-  Furnaces:
-    Electric furnace (blast furnace)
-    Electric smoker (smoker)
-
-  Misc:
-    Electric pump
-  ------------------------------------------------------------------------------------
-  Perhaps should split the machines into a separate mod. That way the main API and energy system are more standalone.
-  This would be relevant in the case where users are not interested in using machines provided by this mod.
- */
 
 @Mod(Ampere.MOD_ID)
 public class Ampere {
@@ -105,6 +82,14 @@ public class Ampere {
     CREATIVE_MODE_TABS.register(modEventBus);
 
     modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+  }
+
+  public static ResourceLocation itemLocation(String name) {
+    return ResourceLocation.fromNamespaceAndPath(Ampere.MOD_ID, "item/" + name);
+  }
+
+  public static ResourceLocation blockLocation(String name) {
+    return ResourceLocation.fromNamespaceAndPath(Ampere.MOD_ID, "block/" + name);
   }
 
   private void commonSetup(final FMLCommonSetupEvent event) {

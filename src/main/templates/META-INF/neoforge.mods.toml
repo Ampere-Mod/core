@@ -14,7 +14,7 @@ loaderVersion="${loader_version_range}" #mandatory
 license="${mod_license}"
 
 # A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/Ampere-Mod/core/issues" #optional
 
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
@@ -38,7 +38,7 @@ displayURL="https://ampere.gtlugo.com/" #optional
 logoFile="logo_large.png" #optional
 
 # A text field displayed in the mod UI
-#credits="" #optional
+credits="NeoForge, More Red, Project Red, CBMultipart" #optional
 
 # A text field displayed in the mod UI
 authors="${mod_authors}" #optional
