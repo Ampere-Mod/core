@@ -4,8 +4,11 @@
 
 ## Download
 
-Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ampere)
-and [Modrinth](https://modrinth.com/project/ampere).
+Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ampere) and [Modrinth](https://modrinth.com/project/ampere).
+
+Java packages available via GitHub Packages.
+
+`"https://maven.pkg.github.com/Ampere-Mod/core"`
 
 ## Credits
 
