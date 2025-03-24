@@ -8,7 +8,7 @@ Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ampere) a
 
 Java packages available via GitHub Packages.
 
-`"https://maven.pkg.github.com/Ampere-Mod/core"`
+`https://maven.pkg.github.com/Ampere-Mod/core`
 
 ## Credits
 
