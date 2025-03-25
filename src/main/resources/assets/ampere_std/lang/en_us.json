@@ -1,0 +1,8 @@
+{
+  "itemGroup.ampere_std.tools": "Ampere Tools",
+  "itemGroup.ampere_std.blocks": "Ampere Blocks",
+  "item.ampere_std.screwdriver": "Screwdriver",
+  "block.ampere_std.furnace": "Electric Furnace",
+  "block.ampere_std.power_plant": "Power Plant",
+  "block.ampere_std.wire": "Wire"
+}
